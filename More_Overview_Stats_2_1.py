@@ -61,7 +61,7 @@ def prepend_table(web: AnkiWebView) -> None:
     """Prepend the overview table to Anki's congrats dialog."""
 
     page_uri: str = os.path.basename(web.page().url().path())
-    if page_uri != "congrats":
+    if page_uri != "congrats.html" and page_uri != "congrats":
         return None
 
     html_style: str = """
