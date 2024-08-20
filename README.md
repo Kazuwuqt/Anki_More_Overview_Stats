@@ -1,12 +1,12 @@
 # Anki More Overview Stats 2.1
 
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?logo=ko-fi&logoColor=white)](https://ko-fi.com/P5P0DF3FQ)
 [![contributors](https://img.shields.io/github/contributors/patrick-mahnkopf/Anki_More_Overview_Stats)](https://github.com/patrick-mahnkopf/Anki_More_Overview_Stats/graphs/contributors)
 [![forks](https://img.shields.io/github/forks/patrick-mahnkopf/Anki_More_Overview_Stats)](https://github.com/patrick-mahnkopf/Anki_More_Overview_Stats/network/members)
 [![stars](https://img.shields.io/github/stars/patrick-mahnkopf/Anki_More_Overview_Stats)](https://github.com/patrick-mahnkopf/Anki_More_Overview_Stats/stargazers)
 [![license](https://img.shields.io/github/license/patrick-mahnkopf/Anki_More_Overview_Stats)](./LICENSE)
 [![issues](https://img.shields.io/github/issues/patrick-mahnkopf/Anki_More_Overview_Stats)](https://github.com/patrick-mahnkopf/Anki_More_Overview_Stats/issues)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=patrick-mahnkopf_Anki_More_Overview_Stats&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=patrick-mahnkopf_Anki_More_Overview_Stats)
-[![Ko-fi](https://camo.githubusercontent.com/61d9db38aaab20485a813ab989aa8e57795290341c6f8a05b03429473ca3edab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6b6f2d2d66692d636f6e747269627574652d2532333537396562642e737667)](https://ko-fi.com/P5P0DF3FQ)
 
 This is the More Overview Stats 2.1 Add-on for Anki.  
 
