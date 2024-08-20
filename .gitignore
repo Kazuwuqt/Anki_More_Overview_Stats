@@ -253,5 +253,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,windows,macos
 
-# Anki addon metadata file
+# Anki add-on metadata file
 meta.json
+
+# Anki add-on file to be uploaded to AnkiWeb
+*.ankiaddon
