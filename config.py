@@ -118,21 +118,29 @@ class AddonConfig:
 
     # Load the learn per day count from the deck's settings
     def _refresh_learn_per_day(self) -> None:
-        # Try new method first (Added in Anki 2.1.45)
-        try:
-            current_deck_id = mw.col.decks.current()["id"]
-            self.learn_per_day = mw.col.decks.config_dict_for_deck_id(current_deck_id)[
-                "new"
-            ]["perDay"]
-            return None
-        except Exception:
-            # Use old deprecated method if the newer one doesn't exist
-            try:
-                self.learn_per_day = mw.col.decks.confForDid(current_deck_id)["new"][
-                    "perDay"
-                ]
-            except Exception as e:
-                print(e)
+        current_deck = mw.col.decks.current()
+
+        # Check if the deck has a deck-specific new card limit for today
+        if "newLimitToday" in current_deck and current_deck["newLimitToday"]:
+            new_limit_today = current_deck["newLimitToday"]
+            # Use the limit if 'today' is set to 2, meaning the limit is active
+            if (
+                "limit" in new_limit_today
+                and new_limit_today["limit"]
+                and "today" in new_limit_today
+                and new_limit_today["today"] == 2
+            ):
+                self.learn_per_day = new_limit_today["limit"]
+                return
+
+        # Check if the deck has a deck-specific new card limit
+        if "newLimit" in current_deck and current_deck["newLimit"]:
+            self.learn_per_day = current_deck["newLimit"]
+            return
+
+        # Use the deck preset's new card limit
+        deck_config = mw.col.decks.config_dict_for_deck_id(current_deck["id"])
+        self.learn_per_day = deck_config["new"]["perDay"]
 
     # Load the "Show table for finished decks" flag from the config
     def _refresh_show_table_for_finished_decks(self) -> None:
