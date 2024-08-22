@@ -140,7 +140,18 @@ class AddonConfig:
 
         # Use the deck preset's new card limit
         deck_config = mw.col.decks.config_dict_for_deck_id(current_deck["id"])
-        self.learn_per_day = deck_config["new"]["perDay"]
+
+        if (
+            "new" in deck_config
+            and deck_config["new"]
+            and "perDay" in deck_config["new"]
+            and deck_config["new"]["perDay"]
+        ):
+            self.learn_per_day = deck_config["new"]["perDay"]
+            return
+
+        # Reset to 0 if no settings are found
+        self.learn_per_day = 0
 
     # Load the "Show table for finished decks" flag from the config
     def _refresh_show_table_for_finished_decks(self) -> None:
